@@ -1,0 +1,23 @@
+
+Graph students
+
+Vertex student1 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" = 100, "CS319" = 90})   // generate student1 as a vertex
+Vertex student2 = ("id" = 21401947, "name" = "Boran", "grades" = {"CS315" = 90, "CS319" = 90})   // generate student2 as a vertex
+Vertex student3 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" = 90, "CS319" = 100})    // generate student3 as a vertex
+
+// adds vertices to the graph
+//memory adresses of the vertexes are copied to Graph
+students.add(student1)	
+students.add(student2)
+students.add(student3)
+
+// edges are specified with weight
+student2 5--8 student3   // student2 directs to student3 with weight 5, student3 directs to student2 with weight 8
+student3 6-- student1   // student3 directs to student1 with weight 6, student1 directs to student3 with weight default(1)
+student2 12-> student1   // student2 directs to student1 with weight 12
+
+Path concated = students.queryConcat(where: "name" = "Umitcan" && "name" = "Boran")
+Path altered = students.queryAlter(where: "name" = "Umitcan" || "name" = "Boran")
+Path repeated = students.queryRepet(where: "name" = "Eren" ++)
+
+Path allPaths = students.queryPath("name" = "Umitcan", "id" = "21401947", "name" = "Eren")
