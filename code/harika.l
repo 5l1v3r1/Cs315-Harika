@@ -3,8 +3,8 @@ newline	[\n]
 comment [/]+.*
 
 digit	[0-9]
-lowercase	[_*a-z_*]
-uppercase	[_*A-Z_*]
+lowercase	[_|a-z|_]
+uppercase	[_|A-Z|_]
 
 lparan \(
 rparan \)
@@ -25,7 +25,7 @@ lessequal	<=
 notequal !=
 not !
 
-multiplication	 \*
+multiplication \*
 division	\/
 subtraction	\-
 addition	\+
@@ -104,7 +104,7 @@ range {digit}\.\.\.{digit}
 {integer}	printf("<INTEGER>");
 {double}	printf("<DOUBLE>");
 
-{multiplication}	printf("<MULTIPLICATION>");
+{multiplication} printf("<MULTIPLICATION>");
 {division}	printf("<DIVISION>");
 {subtraction}	printf("<SUBTRACTION>");
 {addition}	printf("<ADDITION>");

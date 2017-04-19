@@ -1,7 +1,7 @@
 CC     = g++
 CXX    = g++
 LEX    = flex
-PROG   = ellie
+PROG   = harika
 
 all: $(PROG)
 
