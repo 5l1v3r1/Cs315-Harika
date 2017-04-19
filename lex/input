@@ -130,4 +130,10 @@ main () { //this is the entry point of our program
 
 	Path d_allPaths = dir_students.queryPath("name" = "Umitcan", "id" = "21401947", "name" = "Eren")
 
+	// check for existence
+	bool isExist = students.isExistVertex(with: "name" = "Boran")
+
+	// get the vertices whose name starts with ‘A’
+	Vertex [] verticesStartsA = students.getVerticesStarts("name", 'A')
+
 }
