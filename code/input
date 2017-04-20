@@ -10,7 +10,7 @@ main () { //this is the entry point of our program
 	char c1 = 'T'
 	char c2 = 'C'
 
-	string TC = c1 + c2
+	string tc = c1 + c2
 
 	// boolean -------------- 
 	bool t1 = true
@@ -19,8 +19,8 @@ main () { //this is the entry point of our program
 	bool f1 = false
 	bool f2 = 0
 
-	bool and_condition = t1 & f2
-	bool or_condition = t2 | f1
+	bool and_condition = t1 && f2
+	bool or_condition = t2 || f1
 
 	// integer -------------
 	int x = 15
@@ -60,9 +60,9 @@ main () { //this is the entry point of our program
 	// directed graph -----------
 	Graph dir_students
 
-	Vertex student11 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" = 100, "CS319" = 90})   // generate student1 as a vertex
-	Vertex student12 = ("id" = 21401947, "name" = "Boran", "grades" = {"CS315" = 90, "CS319" = 90})   // generate student2 as a vertex
-	Vertex student13 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" = 90, "CS319" = 100})    // generate student3 as a vertex
+	Vertex student11 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" : 100, "CS319" : 90})   // generate student1 as a vertex
+	Vertex student12 = ("id" : 21401947, "name" = "Boran", "grades" = {"CS315" : 90, "CS319" : 90})   // generate student2 as a vertex
+	Vertex student13 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" : 90, "CS319" : 100})    // generate student3 as a vertex
 
 	// adds vertices to the graph
 	//memory adresses of the vertexes are copied to Graph
@@ -75,22 +75,12 @@ main () { //this is the entry point of our program
 	student13 -> student11   // student3 directs to student1
 	student12 -> student11   // student2 directs to student1
 
-	// representation
-	/*
-	(12) -----------> (13)
-	    \          /
-	     \        /
-	      \      /
-	       v    v
-	        (11)
-	*/
-
 	// undirected graph ----------
 	Graph und_students
 
-	Vertex student21 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" = 100, "CS319" = 90})   // generate student1 as a vertex
-	Vertex student22 = ("id" = 21401947, "name" = "Boran", "grades" = {"CS315" = 90, "CS319" = 90})   // generate student2 as a vertex
-	Vertex student23 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" = 90, "CS319" = 100})    // generate student3 as a vertex
+	Vertex student21 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" : 100, "CS319" : 90})   // generate student1 as a vertex
+	Vertex student22 = ("id" = 21401947, "name" = "Boran", "grades" = {"CS315" : 90, "CS319" : 90})   // generate student2 as a vertex
+	Vertex student23 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" : 90, "CS319" : 100})    // generate student3 as a vertex
 
 	// adds vertices to the graph
 	//memory adresses of the vertexes are copied to Graph
@@ -104,15 +94,6 @@ main () { //this is the entry point of our program
 	student23 -- student21   // student3 undirects student1
 	student22 -- student21   // student2 undirects student1
 
-	// representation
-	/*
-	  (2) ------- (3)
-	    \         /
-	     \       /
-	      \     /
-	       \   /
-	        (1)
-	*/
 
 	// queries ----------------
 

@@ -2,9 +2,18 @@ space	[ \t]+
 newline	[\n]
 comment [/]+.*
 
+string_t "string"
+int_t "int"
+double_t "double"
+float_t "float"
+bool_t "bool"
+char_t "char"
+
+char \'[A-Za-z0-9_]\'
+
 digit	[0-9]
-lowercase	[_|a-z|_]
-uppercase	[_|A-Z|_]
+lowercase	[_*a-z_*]
+uppercase	[_*A-Z_*]
 
 lparan \(
 rparan \)
@@ -51,16 +60,16 @@ identifier {lowercase}{alphanumeric}*
 parameterIdentifier {identifier}:
 class {uppercase}{alphanumeric}*
 attribute {identifier}{dot}{class}
-methodcall {identifier}{dot}{identifier}
-method {identifier}{lparan}{rparan}
+functioncall {identifier}{dot}{identifier}
+function {identifier}{lparan}{alphanumeric}*{double}*{rparan}
 classwitharg {class}{lparan}({identifier}|{string}){rparan}
 constant {class}{dot}{class}
 integer {digit}+
 double [-+]?{digit}*(\.{digit}+)
 float [-+]?{digit}*(\.{digit}+)[f]
-listelem {space}?{integer}{space}?
-listbody ({space}?|{listelem}(,{listelem})*)
-list \[{listbody}\]
+setelem {space}?{integer}|{string}{space}?
+setbody ({space}?|{setelem}(,{setelem})*)
+set \[{setbody}\]
 range {digit}\.\.\.{digit}
 
 %%
@@ -72,9 +81,20 @@ range {digit}\.\.\.{digit}
 {whileloop}	printf("<WHILELOOP>");
 {boolean}	printf("<BOOLEAN>");
 {attribute}	printf("<ATTRIBUTE>");
+{string_t} printf("<STRINGTYPE>");
+{int_t} printf("<INTEGERTYPE>");
+{double_t} printf("<DOUBLETYPE>");
+{float_t} printf("<FLOATTYPE>");
+{bool_t} printf("<BOOLEANTYPE>");
+{char_t} printf("<CHARTYPE>");
+{char} printf("<CHARACTER>");
+{set} printf("<SET>");
+
 {classwitharg}	printf("<CLASSWITHARG>");
-{methodcall}	printf("<METHODCALL>");
-{method}	printf("<METHOD>");
+
+{functioncall}	printf("<FUNCTIONCALL>");
+
+{function}	printf("<FUNCTION>");
 {identifier}	printf("<IDENTIFIER>");
 {parameterIdentifier}    printf("<PARAMETERIDENTIFIER>");
 {constant}	printf("<CONSTANT>");
