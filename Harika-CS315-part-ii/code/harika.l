@@ -41,12 +41,15 @@ greaterequal	>=
 lessequal	<=
 notequal !=
 not !
+doubledash --
+dashgreater ->
 
 multiplication \*
 division	\/
 subtraction	\-
 addition	\+
 remainder \%
+
 
 or \|\|
 and \&\&
