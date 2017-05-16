@@ -1,4 +1,4 @@
 /*Most common mistake. Forgot to put the semicolon*/
-init() {
+main() {
 	x = 5
 }
