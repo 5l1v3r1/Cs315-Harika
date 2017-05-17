@@ -1,5 +1,3 @@
 /*The direction is wrong*/
 
-student1 <- student2 {
-	; //empty line.
-}
+student1 <- student2
