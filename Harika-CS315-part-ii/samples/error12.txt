@@ -1,8 +1,6 @@
-/*for loop range selector must have three dots. The one has 2*/
+/*for loop seperator must be ; not , */
 
-init() {
-	;
-
-	for index in 1..5 {
+main() {
+	for (int i = 0, i < 10, i++)  {
 	}
 }
