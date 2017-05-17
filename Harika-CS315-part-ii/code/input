@@ -1,118 +1,27 @@
-main(){// string -------------- 
-	string love = "I love ";
-	string course = "CS315";
-
-	string love_course = love + course;
-
-	// char --------------
-	char c1 = 'T';
-	char c2 = 'C';
-
-	string tc = c1 + c2;
-
-	// boolean -------------- 
-	bool t1 = true;
-	bool t2 = 1;
-
-	bool f1 = false;
-	bool f2 = 0;
-
-	bool and_condition = t1 && f2;
-	bool or_condition = t2 || f1;
-
-	// integer -------------
-	int x = 15;
-	int y = 18;
-
-	int z = x + y;
-
-	// float ---------------
-	float a = 12.08f;
-	float b = 17.92f;
-
-	float c = a + b;
-
-	// double ---------------
-	double k = 125.38;
-	double l = 13.233;
-
-	double m = k - l;
-
-	if (m < 10) {
-		m = 0;
-	}
-	else if (m > 10) {
-		m = 20;
-	}
-	else {
-		m = 10;
-	}
-
-
-	// casting ------------
-	string str_pi = toString(3.14) // holds “3.14”;
-	double dbl_pi = toDouble(piString) // holds 3.14;
-	int int_pi = toInteger(pi);
-
-
-	// directed graph -----------
+main(){
 	Graph dir_students;
 
-	Vertex student11 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" : 100, "CS319" : 90});   // generate student1 as a vertex
-	Vertex student12 = ("id" : 21401947, "name" = "Boran", "grades" = {"CS315" : 90, "CS319" : 90});   // generate student2 as a vertex
-	Vertex student13 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" : 90, "CS319" : 100});   // generate student3 as a vertex
+	Vertex student11 = Vertex(id: 21402338, name: "Eren");  // generate student1 as a vertex
+	Vertex student12 = Vertex(id: 21401947, name: "Boran");   // generate student2 as a vertex
+	Vertex student13 = Vertex(id: 21402314, name: "Umitcan");    // generate student3 as a vertex
 
 	// adds vertices to the graph
 	//memory adresses of the vertexes are copied to Graph
-	dir_students.add(student11);
-	dir_students.add(student12);
-	dir_students.add(student13);
-
-	// edges are specified with default(1) weight
-	student12 -> student13;   // student2 directs to student3
-	student13 -> student11;  // student3 directs to student1
-	student12 -> student11;   // student2 directs to student1
+	add(student11);
+	add(student12);
+	add(student13);
 
 	// undirected graph ----------
 	Graph und_students;
 
-	Vertex student21 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" : 100, "CS319" : 90});   // generate student1 as a vertex
-	Vertex student22 = ("id" = 21401947, "name" = "Boran", "grades" = {"CS315" : 90, "CS319" : 90});   // generate student2 as a vertex
-	Vertex student23 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" : 90, "CS319" : 100});    // generate student3 as a vertex
+	Vertex student21 = ("id" = 21402338, "name" = "Eren");   // generate student1 as a vertex
+	Vertex student22 = ("id" = 21401947, "name" = "Boran");   // generate student2 as a vertex
+	Vertex student23 = ("id" = 21402314, "name" = "Umitcan");    // generate student3 as a vertex
 
 	// adds vertices to the graph
 	//memory adresses of the vertexes are copied to Graph
-	und_students.add(student21);
-	und_students.add(student22);
-	und_students.add(student23);
-
-	// edges are specified with default(1) weight
-
-	student22 -- student23;   // student2 undirects student3
-	student23 -- student21;   // student3 undirects student1
-	student22 -- student21;   // student2 undirects student1
-
-
-	// queries ----------------
-
-	// undirected queries
-	Path u_concated = und_students.queryConcat(where: "name" = "Umitcan" && "name" = "Boran");
-	Path u_altered = und_students.queryAlter(where: "name" = "Umitcan" || "name" = "Boran");
-	Path u_repeated = und_students.queryRepet(where: "name" = "Eren" ++);
-
-	Path u_allPaths = und_students.queryPath("name" = "Umitcan", "id" = "21401947", "name" = "Eren");
-		
-	// directed queries
-	Path d_concated = dir_students.queryConcat(where: "name" = "Umitcan" && "name" = "Boran");
-	Path d_altered = dir_students.queryAlter(where: "name" = "Umitcan" || "name" = "Boran");
-	Path d_repeated = dir_students.queryRepet(where: "name" = "Eren" ++);
-
-	Path d_allPaths = dir_students.queryPath("name" = "Umitcan", "id" = "21401947", "name" = "Eren");
-
-	// check for existence
-	bool isExist = students.isExistVertex(with: "name" = "Boran");
-
-	// get the vertices whose name starts with ‘A’
-	Vertex [] verticesStartsA = students.getVerticesStarts("name", 'A');
-
+	add(student21);	
+	add(student22);
+	add(student23);
 }
+

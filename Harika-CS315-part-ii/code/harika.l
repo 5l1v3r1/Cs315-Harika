@@ -6,34 +6,26 @@
 %}
 
 %option yylineno
-space	[' '\t]+
+
+space	[ \t]+
 newline	[\n]
 comment [/]+.*
 
-string_t "string"
-int_t "int"
-double_t "double"
-float_t "float"
-bool_t "bool"
-char_t "char"
-
-char \'[A-Za-z0-9_]\'
-
 digit	[0-9]
-lowercase	[_*a-z_*]
-uppercase	[_*A-Z_*]
+lowercase	[a-z]
+uppercase	[A-Z]
 
 lparan \(
 rparan \)
 
-lbrackets \{
+lbrackets \{ 
 rbrackets \}
 
 semicolon \;
 comma	\,
 dot	\.
 
-assignment =
+assignment (^|[^!><'=])=($|[^=])
 comparison ==
 greater	>
 less <
@@ -41,49 +33,49 @@ greaterequal	>=
 lessequal	<=
 notequal !=
 not !
-doubledash --
-dashgreater ->
 
-multiplication \*
+multiplication	 \*
 division	\/
 subtraction	\-
 addition	\+
 remainder \%
-
 
 or \|\|
 and \&\&
 
 entryPoint main
 
-ifstatement	if
-elseifstatement	"else if"
-elsestatement	else
-boolean	true|false
+inheritance	->
+ifstatement	whether
+elseifstatement	"proviso whether"
+elsestatement	proviso
+boolean	True|False
 
 forloop	for
 whileloop while
+in	in
 
-string \"([^\\\"]|\\\"|\>|\\\\)*\"
+string \"([^\\\"]|\\\"|\\\n|\\\\)*\"
 
 alphanumeric ({lowercase}|{uppercase}|{digit})
 identifier {lowercase}{alphanumeric}*
 parameterIdentifier {identifier}:
 class {uppercase}{alphanumeric}*
 attribute {identifier}{dot}{class}
-functioncall {identifier}{dot}{identifier}
-function {identifier}{lparan}{alphanumeric}*{double}*{rparan}
+methodcall {identifier}{dot}{identifier}
+main {entryPoint}{lparan}{rparan}
+method {identifier}{lparan}{rparan}
 classwitharg {class}{lparan}({identifier}|{string}){rparan}
+constant {class}{dot}{class}
 integer {digit}+
 double [-+]?{digit}*(\.{digit}+)
-float [-+]?{digit}*(\.{digit}+)[f]
-setelem {space}?{integer}|{string}{space}?
-setbody ({space}?|{setelem}(,{setelem})*)
-set \[{setbody}\]
+listelem {space}?{integer}{space}?
+listbody ({space}?|{listelem}(,{listelem})*)
+list \[{listbody}\]
 range {digit}\.\.\.{digit}
 
 %%
-{entryPoint}	return ENTRYPOINT;
+{main}	return ENTRYPOINT;
 {ifstatement}	return IFSTATEMENT;
 {elseifstatement}	return ELSEIFSTATEMENT;
 {elsestatement}	return ELSESTATEMENT;
@@ -91,23 +83,15 @@ range {digit}\.\.\.{digit}
 {whileloop}	return WHILELOOP;
 {boolean}	return BOOLEAN;
 {attribute}	return ATTRIBUTE;
-{string_t} return STRINGTYPE;
-{int_t} return INTEGERTYPE;
-{double_t} return DOUBLETYPE;
-{float_t} return FLOATTYPE;
-{bool_t} return BOOLEANTYPE;
-{char_t} return CHARTYPE;
-{char} return CHARACTER;
-{set} return SET;
-
 {classwitharg}	return CLASSWITHARG;
-
-{functioncall}	return FUNCTIONCALL;
-
-{function}	return FUNCTION;
+{methodcall}	return METHODCALL;
+{method}	return METHOD;
+{in}	return IN;
 {identifier}	return IDENTIFIER;
 {parameterIdentifier}    return PARAMETERIDENTIFIER;
+{constant}	return CONSTANT;
 {class}	return CLASS;
+{inheritance}	return INHERITANCE;
 {lparan}	return LPARAN;
 {rparan}	return RPARAN;
 {lbrackets}	return LBRACKET;
@@ -126,6 +110,7 @@ range {digit}\.\.\.{digit}
 
 {semicolon}	return SEMICOLON;
 {comma}	return COMMA;
+{dot} return DOT;
 
 {or}	return OR;
 {and}	return AND;
@@ -133,7 +118,7 @@ range {digit}\.\.\.{digit}
 {integer}	return INTEGER;
 {double}	return DOUBLE;
 
-{multiplication} return MULTIPLICATION;
+{multiplication}	return MULTIPLICATION;
 {division}	return DIVISION;
 {subtraction}	return SUBTRACTION;
 {addition}	return ADDITION;
@@ -141,9 +126,9 @@ range {digit}\.\.\.{digit}
 
 {string} return STRING;
 
-{comment} return COMMENT;
-{space}	return SPACE;
-{newline}	return NEWLINE;
+{comment}	;
+{space}	;
+{newline}	;
 
 %%
 

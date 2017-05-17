@@ -45,51 +45,43 @@
      ELSESTATEMENT = 261,
      FORLOOP = 262,
      WHILELOOP = 263,
-     BOOLEANTYPE = 264,
-     BOOLEAN = 265,
-     ATTRIBUTE = 266,
-     CLASSWITHARG = 267,
-     FUNCTIONCALL = 268,
-     FUNCTION = 269,
+     BOOLEAN = 264,
+     ATTRIBUTE = 265,
+     CLASSWITHARG = 266,
+     METHODCALL = 267,
+     METHOD = 268,
+     IN = 269,
      IDENTIFIER = 270,
      PARAMETERIDENTIFIER = 271,
-     CLASS = 272,
-     LPARAN = 273,
-     RPARAN = 274,
-     LBRACKET = 275,
-     RBRACKET = 276,
-     RANGE = 277,
-     GREATER = 278,
-     LESS = 279,
-     GREATEROREQUAL = 280,
-     LESSOREQUAL = 281,
-     NOTEQUAL = 282,
-     NOT = 283,
-     ASSIGNMENT = 284,
-     COMPARISON = 285,
-     SEMICOLON = 286,
-     CHARTYPE = 287,
-     CHARACTER = 288,
-     SET = 289,
-     COMMA = 290,
-     OR = 291,
-     AND = 292,
-     INTEGERTYPE = 293,
-     INTEGER = 294,
-     DOUBLETYPE = 295,
-     DOUBLE = 296,
-     FLOATTYPE = 297,
-     FLOAT = 298,
-     MULTIPLICATION = 299,
-     DIVISION = 300,
-     SUBTRACTION = 301,
-     ADDITION = 302,
-     REMAINDER = 303,
-     STRINGTYPE = 304,
-     STRING = 305,
-     COMMENT = 306,
-     SPACE = 307,
-     NEWLINE = 308
+     CONSTANT = 272,
+     CLASS = 273,
+     INHERITANCE = 274,
+     LPARAN = 275,
+     RPARAN = 276,
+     LBRACKET = 277,
+     RBRACKET = 278,
+     RANGE = 279,
+     GREATER = 280,
+     LESS = 281,
+     GREATEROREQUAL = 282,
+     LESSOREQUAL = 283,
+     NOTEQUAL = 284,
+     NOT = 285,
+     ASSIGNMENT = 286,
+     COMPARISON = 287,
+     SEMICOLON = 288,
+     COMMA = 289,
+     OR = 290,
+     AND = 291,
+     INTEGER = 292,
+     DOUBLE = 293,
+     MULTIPLICATION = 294,
+     DIVISION = 295,
+     SUBTRACTION = 296,
+     ADDITION = 297,
+     REMAINDER = 298,
+     STRING = 299,
+     DOT = 300
    };
 #endif
 /* Tokens.  */
@@ -99,51 +91,43 @@
 #define ELSESTATEMENT 261
 #define FORLOOP 262
 #define WHILELOOP 263
-#define BOOLEANTYPE 264
-#define BOOLEAN 265
-#define ATTRIBUTE 266
-#define CLASSWITHARG 267
-#define FUNCTIONCALL 268
-#define FUNCTION 269
+#define BOOLEAN 264
+#define ATTRIBUTE 265
+#define CLASSWITHARG 266
+#define METHODCALL 267
+#define METHOD 268
+#define IN 269
 #define IDENTIFIER 270
 #define PARAMETERIDENTIFIER 271
-#define CLASS 272
-#define LPARAN 273
-#define RPARAN 274
-#define LBRACKET 275
-#define RBRACKET 276
-#define RANGE 277
-#define GREATER 278
-#define LESS 279
-#define GREATEROREQUAL 280
-#define LESSOREQUAL 281
-#define NOTEQUAL 282
-#define NOT 283
-#define ASSIGNMENT 284
-#define COMPARISON 285
-#define SEMICOLON 286
-#define CHARTYPE 287
-#define CHARACTER 288
-#define SET 289
-#define COMMA 290
-#define OR 291
-#define AND 292
-#define INTEGERTYPE 293
-#define INTEGER 294
-#define DOUBLETYPE 295
-#define DOUBLE 296
-#define FLOATTYPE 297
-#define FLOAT 298
-#define MULTIPLICATION 299
-#define DIVISION 300
-#define SUBTRACTION 301
-#define ADDITION 302
-#define REMAINDER 303
-#define STRINGTYPE 304
-#define STRING 305
-#define COMMENT 306
-#define SPACE 307
-#define NEWLINE 308
+#define CONSTANT 272
+#define CLASS 273
+#define INHERITANCE 274
+#define LPARAN 275
+#define RPARAN 276
+#define LBRACKET 277
+#define RBRACKET 278
+#define RANGE 279
+#define GREATER 280
+#define LESS 281
+#define GREATEROREQUAL 282
+#define LESSOREQUAL 283
+#define NOTEQUAL 284
+#define NOT 285
+#define ASSIGNMENT 286
+#define COMPARISON 287
+#define SEMICOLON 288
+#define COMMA 289
+#define OR 290
+#define AND 291
+#define INTEGER 292
+#define DOUBLE 293
+#define MULTIPLICATION 294
+#define DIVISION 295
+#define SUBTRACTION 296
+#define ADDITION 297
+#define REMAINDER 298
+#define STRING 299
+#define DOT 300
 
 
 
