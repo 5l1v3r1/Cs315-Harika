@@ -1,8 +1,2 @@
-Ellie says: syntax error
-Ellie says: Invalid inheritance around line 3
-Ellie says: Invalid inheritance around line 3
-Ellie says: Invalid inheritance around line 3
-Ellie says: Invalid inheritance around line 3
-Ellie says: Invalid inheritance around line 3
-Ellie says: Invalid inheritance around line 4
-Ellie says: Invalid inheritance around line 5
+Harika says: syntax error
+Harika says: Invalid direction around line 3
