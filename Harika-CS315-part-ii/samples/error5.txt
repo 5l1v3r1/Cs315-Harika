@@ -1,5 +1,5 @@
 /*Invalid class initialisation. Class name must be start with uppercase.*/
 
-init() {
-	vertex stdudent = (id : 2016, name: "Boran"); 
+main() {
+	vertex student = (id : 2016, name: "Boran"); 
 }
