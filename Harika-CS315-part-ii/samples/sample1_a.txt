@@ -1,3 +1,19 @@
-/* We will create the Snowman class, and draw it in our init() method. The Snowman class will consist of two ovals for the head and the body, and a message to display (which will also be drawn on the screen). The code is as follows. */
+main() {
+// directed graph -----------
+	Graph dir_students
 
-init(){drawEllie(filledState: False, fillColor: Color.Black, loc: Ellie.DefaultLoc, size: Ellie.DefaultSize, count: 1) { drawOval(fs: filledState, fc: fillColor, l: headLoc, s: headSize); Loc headLoc = Loc(x: 3, y: 5); drawOval(fs: filledState, fc: fillColor, l: loc, s: size); drawString(fs: filledState, fc: fillColor, text: message);}}
+	Vertex student11 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" : 100, "CS319" : 90})   // generate student1 as a vertex
+	Vertex student12 = ("id" : 21401947, "name" = "Boran", "grades" = {"CS315" : 90, "CS319" : 90})   // generate student2 as a vertex
+	Vertex student13 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" : 90, "CS319" : 100})    // generate student3 as a vertex
+
+	// adds vertices to the graph
+	//memory adresses of the vertexes are copied to Graph
+	dir_students.add(student11)
+	dir_students.add(student12)
+	dir_students.add(student13)
+
+	// edges are specified with default(1) weight
+	student12 -> student13   // student2 directs to student3
+	student13 -> student11   // student3 directs to student1
+	student12 -> student11   // student2 directs to student1
+  }
