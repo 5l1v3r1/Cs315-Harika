@@ -1,5 +1,5 @@
-/*Arguments list have 2 extra commas at the end*/
+/*Arguments list have 2 extra commas*/
 
-asd(x: Int, y: String,,) {
+asd(x: Int,, y: String) {
 	; //empty function body
 }
