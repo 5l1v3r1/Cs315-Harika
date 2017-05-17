@@ -1,5 +1,5 @@
-/*Invalid class initialisation. Missing type of snowman. It should have been inherited from Ellie.*/
+/*Invalid class initialisation. Class name must be start with uppercase.*/
 
 init() {
-	snowman = Snowman(m: message); 
+	vertex stdudent = (id : 2016, name: "Boran"); 
 }
