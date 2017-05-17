@@ -1,8 +1,8 @@
-Ellie says: methodcall param
-Ellie says: syntax error
-Ellie says: Invalid arguments list around line 3
-Ellie says: Invalid arguments list around line 3
-Ellie says: expression identifier
-Ellie says: assigment
-Ellie says: semicolon
-Ellie says: funtion decleration 1
+Harika says: methodcall param
+Harika says: syntax error
+Harika says: Invalid arguments list around line 3
+Harika says: Invalid arguments list around line 3
+Harika says: expression identifier
+Harika says: assigment
+Harika says: semicolon
+Harika says: funtion decleration 1
