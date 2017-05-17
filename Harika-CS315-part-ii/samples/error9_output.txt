@@ -1,9 +1,9 @@
-Ellie says: integer param
-Ellie says: syntax error
-Ellie says: Invalid arguments list around line 4
-Ellie says: Invalid arguments list around line 4
-Ellie says: Invalid arguments list around line 4
-Ellie says: object creation
-Ellie says: semicolon
-Ellie says: main function
-Ellie says: main function is fine
+Harika says: integer param
+Harika says: syntax error
+Harika says: Invalid arguments list around line 4
+Harika says: Invalid arguments list around line 4
+Harika says: Invalid arguments list around line 4
+Harika says: object creation
+Harika says: semicolon
+Harika says: main function
+Harika says: main function is fine
