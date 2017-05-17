@@ -1,5 +1,5 @@
-/* Ellie doesn’t allow operations on parameters
+/* Harika doesn’t allow operations on parameters
 
 init() {
-	Loc loc = Loc(x: 3+4); 
+	Vertex ver = (id : 3+4); 
 }
