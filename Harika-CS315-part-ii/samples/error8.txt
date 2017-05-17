@@ -1,5 +1,5 @@
-/*Undefined Parameter. parameter undefined, must be Snowman(message: message)*/
+/*Undefined Parameter.*/
 
-init() {
-	Snowman snowman = Snowman(message);
+main() {
+	Vertex ver1 = (message);
 }
