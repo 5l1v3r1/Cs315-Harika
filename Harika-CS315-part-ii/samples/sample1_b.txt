@@ -1,3 +1,20 @@
-/* We will create the Snowman class, and draw it in our init() method. The Snowman class will consist of two ovals for the head and the body, and a message to display (which will also be drawn on the screen). The code is as follows. */
+main() {
+// undirected graph ----------
+	Graph und_students
 
-Snowman -> Ellie { Ellie snowmanHead = Oval(); Ellie snowmanBody = Oval(); Ellie message = EllieString(m: message); drawEllie(filledState: False, fillColor: Color.Black, loc: Ellie.DefaultLoc, size: Ellie.DefaultSize, count: 1) { drawOval(fs: filledState, fc: fillColor, l: headLoc, s: headSize); Loc headLoc = Loc(x: 3, y: 5); drawOval(fs: filledState, fc: fillColor, l: loc, s: size); drawString(fs: filledState, fc: fillColor, text: message);}}
+	Vertex student21 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" : 100, "CS319" : 90})   // generate student1 as a vertex
+	Vertex student22 = ("id" = 21401947, "name" = "Boran", "grades" = {"CS315" : 90, "CS319" : 90})   // generate student2 as a vertex
+	Vertex student23 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" : 90, "CS319" : 100})    // generate student3 as a vertex
+
+	// adds vertices to the graph
+	//memory adresses of the vertexes are copied to Graph
+	und_students.add(student21)	
+	und_students.add(student22)
+	und_students.add(student23)
+
+	// edges are specified with default(1) weight
+
+	student22 -- student23   // student2 undirects student3
+	student23 -- student21   // student3 undirects student1
+	student22 -- student21   // student2 undirects student1
+}
