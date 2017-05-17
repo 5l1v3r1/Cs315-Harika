@@ -1,4 +1,4 @@
-/*Invalid main function. Misspelled, should be init() {}*/
+/*Invalid main function. Misspelled, should be main() {}*/
 
-int() {
+man() {
 }
