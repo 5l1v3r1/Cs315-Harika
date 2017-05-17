@@ -1,4 +1,25 @@
-/* This time, we will create the Automobile class. The class will have a rectangle for the body and two ovals (we will do some tricks to make them circles) as wheels. The sample is found below. */
+main() {
+// directed graph -----------
+	Graph dir_students
 
-// the Automobile Class we call in init
-Automobile -> Ellie { Ellie carBody = Rect(); Ellie frontWheel = Oval(); Ellie rearWheel = Oval(); Loc frontWheelLoc = Loc(x: automobileLoc.x, y: automobileLoc.y); Loc rearWheelLoc = Loc(x: automobileLoc.x, y: automobileLoc.y); Automobile auto = Automobile(a: automobileLoc, b: automobileSize, c: wheelColour); drawEllie(filledState: False, fillColor: Color.Black, loc: Ellie.DefaultLoc, size: Ellie.DefaultSize, count: 1) { drawRect(l: automobileLoc, s: automobileSize, fs: filledState, fc: fillColor); drawOval(l: frontWheelLoc, s: wheelSize, filledState: True, fillColour: wheelColour); drawOval(l: rearWheelLoc, s: wheelSize, fs: True, fc: wheelColour);}}
+	Vertex student11 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" : 100, "CS319" : 90})   // generate student1 as a vertex
+	Vertex student12 = ("id" : 21401947, "name" = "Boran", "grades" = {"CS315" : 90, "CS319" : 90})   // generate student2 as a vertex
+	Vertex student13 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" : 90, "CS319" : 100})    // generate student3 as a vertex
+
+	// adds vertices to the graph
+	//memory adresses of the vertexes are copied to Graph
+	dir_students.add(student11)
+	dir_students.add(student12)
+	dir_students.add(student13)
+
+	// edges are specified with default(1) weight
+	student12 -> student13   // student2 directs to student3
+	student13 -> student11   // student3 directs to student1
+	student12 -> student11   // student2 directs to student1
+// directed queries
+	Path d_concated = dir_students.queryConcat(where: "name" = "Umitcan" && "name" = "Boran")
+	Path d_altered = dir_students.queryAlter(where: "name" = "Umitcan" || "name" = "Boran")
+	Path d_repeated = dir_students.queryRepet(where: "name" = "Eren" ++)
+
+	Path d_allPaths = dir_students.queryPath("name" = "Umitcan", "id" = "21401947", "name" = "Eren")
+}
