@@ -1,5 +1,5 @@
 /*Missing object name. Loc should have an instance name*/
 
 init() {
-	Loc = Loc(x: 3, y: 4);
+	Vertex = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" = 100, "CS319" = 90});
 }
