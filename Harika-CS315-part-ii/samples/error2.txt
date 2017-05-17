@@ -1,4 +1,4 @@
 /*Invalid class declaration. Forgot to put right paranthesis*/
-init() {
-	Vertex student1 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" = 100, "CS319" = 90};
+main() {
+	Vertex student1 = ("id" : 21402338, "name" : "Eren", "grades" : {"CS315" = 100, "CS319" = 90};
 }
