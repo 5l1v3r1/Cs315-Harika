@@ -1,5 +1,5 @@
 /*Arguments list have 2 extra commas*/
 
-asd(x: Int,, y: String) {
+asd(int x,, string y) {
 	; //empty function body
 }
