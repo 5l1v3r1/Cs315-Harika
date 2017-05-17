@@ -1,3 +1,31 @@
-/* Now, it is time to combine the two classes we created so far, the Snowman and the Automobile class. Let’s see how things will shape (pun intended) when we deal with a more complex problem. The code to draw two snowmen on top of the automobile is below. */
+	main() {
+  // directed graph -----------
+	Graph dir_students
 
-RiderSnowmen -> Ellie { Ellie mrSnowman = Snowman(a: loc, b: snowmanSize, c: message); Ellie mrsSnowman = Snowman(a: mrsSnowmanLoc, b: snowmanSize, c: message); Ellie snowmanMobile = Automobile(a: snowmanMobileLoc, b: automobileSize, c: wheelColour); Loc mrsSnowmanLoc = Loc(x: loc.x, y: loc.y); Loc snowmanMobileLoc = Loc(x: loc.x, y: loc.y); RiderSnowmen rider = RiderSnowmen(a: loc, b: snowmanSize, c: automobileSize, d: message, e: wheelColour); drawEllie(filledState: False, fillColor: Colour.Black, loc: Ellie.DefaultLoc, size: Ellie.DefaultSize, count: 1) { mrSnowman.drawEllie(filledState: filledState, fillColour: fillColourSnowman); mrsSnowman.drawEllie(filledState: filledState, fillColour: fillColourSnowman); snowmanMobile.drawEllie(filledState: filledState, fillColour: fillColourAutomobile);}}
+	Vertex student11 = ("id" = 21402338, "name" = "Eren", "grades" = {"CS315" : 100, "CS319" : 90})   // generate student1 as a vertex
+	Vertex student12 = ("id" : 21401947, "name" = "Boran", "grades" = {"CS315" : 90, "CS319" : 90})   // generate student2 as a vertex
+	Vertex student13 = ("id" = 21402314, "name" = "Umitcan", "grades" = {"CS315" : 90, "CS319" : 100})    // generate student3 as a vertex
+
+	// adds vertices to the graph
+	//memory adresses of the vertexes are copied to Graph
+	dir_students.add(student11)
+	dir_students.add(student12)
+	dir_students.add(student13)
+
+	// edges are specified with default(1) weight
+	student12 -> student13   // student2 directs to student3
+	student13 -> student11   // student3 directs to student1
+	student12 -> student11   // student2 directs to student1
+
+	// queries ----------------
+	// directed queries
+	Path d_concated = dir_students.queryConcat(where: "name" = "Umitcan" && "name" = "Boran")
+	Path d_altered = dir_students.queryAlter(where: "name" = "Umitcan" || "name" = "Boran")
+	Path d_repeated = dir_students.queryRepet(where: "name" = "Eren" ++)
+
+	Path d_allPaths = dir_students.queryPath("name" = "Umitcan", "id" = "21401947", "name" = "Eren")
+
+	// get the vertices whose name starts with ‘A’
+	Vertex [] verticesStartsA = dir_students.getVerticesStarts("name", 'A')
+
+}
