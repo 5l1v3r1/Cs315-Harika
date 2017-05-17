@@ -1,5 +1,5 @@
 /* Harika doesn’t allow operations on parameters
 
-init() {
+main() {
 	Vertex ver = (id : 3+4); 
 }
