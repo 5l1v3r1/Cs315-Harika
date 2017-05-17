@@ -1,5 +1,5 @@
-/*for inheritance should be Snowman -> Ellie. The direction is wrong*/
+/*The direction is wrong*/
 
-Snowman <- Ellie {
+student1 <- student2 {
 	; //empty line.
 }
